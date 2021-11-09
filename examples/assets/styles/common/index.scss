@@ -1,0 +1,164 @@
+/**
+ * reset
+ */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+body {
+  background-color: #ffffff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  cursor: pointer; 
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+}
+.svg-icon:focus {
+  outline: none;
+}
+ul, li { 
+  list-style-type: none;
+}
+input {
+  outline: none;
+  -webkit-apperance: none;
+}
+
+/**
+ * 浮动 && 清楚浮动
+ */
+$float: left, right, none, inherit;
+@each $i in $float {
+  .float-#{$i} {
+    float: $i;
+  }
+}
+.clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/**
+ * 对齐方式
+ */
+$display: none, block, inline, inline-block, list-item, table, inline-table;
+@each $i in $display {
+  .display-#{$i} {
+    display: $i;
+  }
+}
+
+/**
+ * 对齐方式
+ */
+$align: left, right, center, justify, inherit;
+@each $i in $align {
+  .text-#{$i} {
+    text-align: $i;
+  }
+}
+
+/**
+ * 边距
+ * 定义了一些常用的内边距和外边距
+ */
+$gauge: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20,
+        5, 10, 15, 20, 25, 30, 35, 40, 45, 50,
+        60, 70, 80, 90, 100;
+
+@each $i in $gauge {
+  .m-#{$i} { margin: $i+px; }
+  .m-t#{$i} { margin-top: $i+px; }
+  .m-b#{$i} { margin-bottom: $i+px; }
+  .m-l#{$i} { margin-left: $i+px; }
+  .m-r#{$i} { margin-right: $i+px; }
+  .m-lr#{$i} { margin-left: $i+px; margin-right: $i+px; }
+  .m-tb#{$i} { margin-top: $i+px; margin-bottom: $i+px; }
+
+  .p-#{$i} { padding: $i+px; }
+  .p-t#{$i} { padding-top: $i+px; }
+  .p-b#{$i} { padding-bottom: $i+px; }
+  .p-l#{$i} { padding-left: $i+px; }
+  .p-r#{$i} { padding-right: $i+px; }
+  .p-lr#{$i} { padding-left: $i+px; padding-right: $i+px; }
+  .p-tb#{$i} { padding-top: $i+px; padding-bottom: $i+px; }
+}
+
+/**
+ * Flex 布局
+ * 定义了flex布局常用的几种方式
+ */
+.flex { display: flex; flex-wrap: wrap; }
+.flex-center { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
+$flex-x: "center", "space-between", "space-around", "space-evenly";
+$flex-y: "center", "flex-start", "flex-end", "space-evenly", "baseline";
+@each $i in $flex-x {
+  .flex-x-#{$i} { display: flex; flex-wrap: wrap; justify-content: #{$i}; }
+}
+@each $i in $flex-y {
+  .flex-y-#{$i} { display: flex; flex-wrap: wrap; align-items: #{$i}; }
+}
+
+/**
+ * Cursor
+ * 定义了鼠标手势
+ */
+$cursor: default, auto, crosshair, pointer, move, e-resize, ne-resize, nw-resize, n-resize, se-resize, sw-resize, s-resize, w-resize, text, wait, help;
+@each $i in $cursor {
+  .cursor-#{$i} { cursor: $i; }
+}
+
+/**
+ * Font size
+ * 定义了一些常用的字体大小
+ */
+ $fonts: (
+  10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+  22, 24, 26, 28, 30, 32, 34, 36, 38, 40
+);
+@each $font in $fonts{
+  .font-#{$font}{ font-size: $font + px; }
+}
+
+/**
+ * 情境颜色
+ */
+$colors: (
+  "primary": #337ab7,
+  "success": #dff0d8,
+  "info": #d9edf7,
+  "warning": #fcf8e3,
+  "danger": #f2dede,
+  "ffffff": #ffffff,
+  "000000": #000000,
+);
+@each $colorKey, $color in $colors{
+  .color-#{$colorKey}{ color: $color; }
+  .bg-#{$colorKey} { background-color: $color; }
+}
+
+/**
+ * 超出指定行数省略号
+ */
+@mixin line-clamp($number) {
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
