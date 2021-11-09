@@ -13,7 +13,7 @@ module.exports = (md) => {
         const content = tokens[idx + 1].type === "fence" ? tokens[idx + 1].content : "";
         return `<demo-block>
         ${description ? `<div>${md.render(description)}</div>` : ""}
-        <!--element-demo: ${content}:element-demo-->
+        &lt;!--element-demo: ${content}:element-demo--&gt;
         `;
       }
       return "</demo-block>";

@@ -18,6 +18,7 @@
     </div>
     <div class="demo-block-control" ref="control" @click="isExpanded = !isExpanded">
       <i :class="[iconClass, { hovering: hovering }]" style="font-size: 18px"></i>
+      <svg-icon :class="[iconClass, { hovering: hovering }]"></svg-icon>
       <transition name="text-slide">
         <span v-show="hovering">{{ controlText }}</span>
       </transition>
@@ -150,7 +151,8 @@ export default {
     color: #d3dce6;
     cursor: pointer;
     position: relative;
-    i {
+    i,
+    .svg-icon {
       vertical-align: baseline;
       display: inline-block;
       font-size: 16px;

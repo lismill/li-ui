@@ -11,7 +11,7 @@ export default {
       meta: {
         title: "组件",
       },
-      component: () => import(/* webpackChunkName: "component" */ "@/docs/component.md"),
+      component: () => import(/* webpackChunkName: "component" */ "@/views/markdown/component.md"),
     },
     {
       path: "button",
@@ -19,7 +19,7 @@ export default {
       meta: {
         title: "按钮",
       },
-      component: () => import(/* webpackChunkName: "component" */ "@/docs/button.md"),
+      component: () => import(/* webpackChunkName: "component" */ "@/views/markdown/button.md"),
     },
   ],
 };
