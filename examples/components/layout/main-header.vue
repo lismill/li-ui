@@ -10,9 +10,14 @@
         <span>Generate a UI library</span>
       </div>
       <div class="link">
-        <router-link :to="route.path" v-for="route in markdown" :key="route.path">
-          {{ route.meta.title }}
-        </router-link>
+        <div class="web">
+          <router-link :to="route.path" v-for="route in markdown" :key="route.path">
+            {{ route.meta.title }}
+          </router-link>
+        </div>
+        <div class="mobile">
+          <div class="icon"></div>
+        </div>
       </div>
     </div>
   </header>

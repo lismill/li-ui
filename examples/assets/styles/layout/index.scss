@@ -94,6 +94,9 @@
     }
     .link {
       line-height: 80px;
+      .mobile {
+        display: none;
+      }
       a {
         text-decoration: none;
         display: inline-block;

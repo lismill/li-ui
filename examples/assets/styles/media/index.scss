@@ -1,0 +1,33 @@
+@media (max-width: 750px) {
+  .markdown-body {
+    padding: 15px 20px;
+    left: 0;
+  }
+
+  .app-nav {
+    display: none;
+  }
+  
+  .app-header {
+    padding: 0 15px;
+    .header-container {
+      width: 100%;
+      .logo {
+        width: 200px;
+      }
+      .web {
+        display: none;
+      }
+      .mobile {
+        display: block !important;
+        .icon {
+          color: #888888;
+        }
+      }
+    }
+  }
+
+  .app-footer {
+    margin-top: 60px;
+  }
+}
