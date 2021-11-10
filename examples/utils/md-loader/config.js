@@ -15,7 +15,7 @@ config.options
     {
       level: 2,
       slugify: slugify,
-      permalink: true,
+      permalink: false,
       permalinkBefore: true,
     },
   ])
