@@ -6,12 +6,17 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
+yarn start
 yarn serve
 ```
 
 ### Compiles and minifies for production
 ```
 yarn build
+```
+### Package components
+```
+yarn lib
 ```
 
 ### Lints and fixes files
