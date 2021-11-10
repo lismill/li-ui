@@ -3,13 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "yarn serve:dev",
-    "serve": "yarn serve:dev",
-    "serve:dev": "vue-cli-service serve --mode develop",
-    "serve:prod": "vue-cli-service serve --mode production",
-    "build": "yarn build:dev",
-    "build:dev": "vue-cli-service build --mode develop",
-    "build:prod": "vue-cli-service build --mode production",
+    "serve": "vue-cli-service serve --mode develop",
+    "build": "vue-cli-service build --mode develop",
     "lib": "vue-cli-service build --target lib --name li-ui --dest lib packages/index.ts",
     "lint": "vue-cli-service lint"
   },
