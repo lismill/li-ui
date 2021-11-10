@@ -12,14 +12,28 @@ module.exports = (md) => {
         const description = m && m.length > 1 ? m[1] : "";
         const content = tokens[idx + 1].type === "fence" ? tokens[idx + 1].content : "";
         return `<demo-block>
+        <!--element-demo: ${content}:element-demo-->
         ${description ? `<div>${md.render(description)}</div>` : ""}
-        &lt;!--element-demo: ${content}:element-demo--&gt;
         `;
+      } else {
+        return "</demo-block>";
       }
-      return "</demo-block>";
     },
   });
 
   md.use(mdContainer, "tip");
   md.use(mdContainer, "warning");
+  md.use(mdContainer, "summary", {
+    validate(params) {
+      return params.trim().match(/^spoiler\s+(.*)$/);
+    },
+    render(tokens, idx) {
+      var m = tokens[idx].info.trim().match(/^spoiler\s+(.*)$/);
+      if (tokens[idx].nesting === 1) {
+        return "<details><summary>" + md.utils.escapeHtml(m[1]) + "</summary>\n";
+      } else {
+        return "</details>\n";
+      }
+    },
+  });
 };

@@ -5,8 +5,8 @@
     @mouseenter="hovering = true"
     @mouseleave="hovering = false"
   >
-    <div class="source">
-      <slot name="source"></slot>
+    <div class="demo">
+      <slot name="demo"></slot>
     </div>
     <div class="meta" ref="meta">
       <div class="description" v-if="$slots.default">
@@ -17,8 +17,13 @@
       </div>
     </div>
     <div class="demo-block-control" ref="control" @click="isExpanded = !isExpanded">
-      <i :class="[iconClass, { hovering: hovering }]" style="font-size: 18px"></i>
-      <svg-icon :class="[iconClass, { hovering: hovering }]"></svg-icon>
+      <!-- <i :class="[iconClass, { hovering: hovering }]" style="font-size: 18px"></i> -->
+      <svg-icon
+        :class="[iconClass, { hovering: hovering }]"
+        name="code"
+        size="17"
+        :color="hovering ? '#409eff' : '#d3dce6'"
+      ></svg-icon>
       <transition name="text-slide">
         <span v-show="hovering">{{ controlText }}</span>
       </transition>
@@ -86,7 +91,7 @@ export default {
   code {
     font-family: Menlo, Monaco, Consolas, Courier, monospace;
   }
-  .source {
+  .demo {
     padding: 24px;
   }
   .meta {
@@ -151,6 +156,10 @@ export default {
     color: #d3dce6;
     cursor: pointer;
     position: relative;
+    .svg-icon {
+      position: relative;
+      top: 11px;
+    }
     i,
     .svg-icon {
       vertical-align: baseline;

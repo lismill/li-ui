@@ -1,25 +1,17 @@
+import markdown from "../markdown";
+
 export default {
   path: "/component",
   component: () => import(/* webpackChunkName: "component" */ "@/views/layout/index.vue"),
   redirect: {
     path: "/component/index",
   },
-  children: [
-    {
-      path: "index",
-      name: "ComponentIndex",
-      meta: {
-        title: "组件",
-      },
-      component: () => import(/* webpackChunkName: "component" */ "@/views/markdown/component.md"),
-    },
-    {
-      path: "button",
-      name: "ComponentButton",
-      meta: {
-        title: "按钮",
-      },
-      component: () => import(/* webpackChunkName: "component" */ "@/views/markdown/button.md"),
-    },
-  ],
+  children: markdown.map((item: any) => {
+    return {
+      path: item.path,
+      name: item.name,
+      meta: item.mate,
+      component: () => import(/* webpackChunkName: "component" */ `@/views/markdown/${item.component}.md`),
+    };
+  }),
 };

@@ -34,7 +34,6 @@ const routes: Array<RouteConfig> = [
   },
 ];
 
-console.log("routes", routes);
 // 配置路由信息
 const router = new VueRouter({
   mode: "hash",
