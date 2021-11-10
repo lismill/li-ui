@@ -1,13 +1,10 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import hljs from "highlight.js";
+import markdown from "./markdown";
 
 Vue.use(VueRouter);
 
-// 引入 modules 文件夹下的所有路由
-const requireAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().map(requireContext);
-const req = require.context("./modules", true, /\.ts$/);
-const modules: any = requireAll(req).map((route: any) => route.default);
 const routes: Array<RouteConfig> = [
   // 首页
   {
@@ -20,11 +17,14 @@ const routes: Array<RouteConfig> = [
       hidden: true,
       permission: 10000,
     },
-    component: () => import(/* webpackChunkName: "home" */ "@/views/home/index.vue"),
+    redirect: {
+      path: "/guide",
+    },
+    // component: () => import(/* webpackChunkName: "home" */ "@/views/home/index.vue"),
   },
 
   // 其他模块
-  ...modules,
+  ...markdown,
 
   // 404
   {

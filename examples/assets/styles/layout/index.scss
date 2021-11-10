@@ -1,0 +1,132 @@
+// app-nav
+.app-nav {
+  position: fixed;
+  width: 240px;
+  height: calc(100% - 100px);
+  left: 50%;
+  top: 100px;
+  margin-left: -570px;
+  border-right: 1px solid #ebebeb;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.12);
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  dl {
+    dt {
+      font-size: 16px;
+      color: #333333;
+      line-height: 40px;
+      height: 40px;
+      text-decoration: none;
+      transition: .15s ease-out;
+      font-weight: 600;
+      a {
+        display: block;
+        &:hover {
+          color: #409eff;
+        }
+      }
+    }
+    dd {
+      a {
+        padding-left: 1px;
+        display: block;
+        height: 40px;
+        color: #444;
+        line-height: 40px;
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: 400;
+        &:hover, &.active {
+          color: #409eff;
+        }
+      }
+      
+    }
+  }
+}
+
+// header
+.app-header {
+  background-color: #fff;
+  opacity: 0.98;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.3s;
+  z-index: 100;
+  .header-container {
+    width: 1140px;
+    border-bottom: 1px solid #ebebeb;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    .logo {
+      width: 300px;
+      display: flex;
+      align-items: center;
+      .svg-icon {
+        margin-left: -13px;
+      }
+      span {
+        position: relative;
+        top: 2px;
+        font-weight: 500;
+        font-size: 15px;
+        color: #888888;
+      }
+    }
+    .link {
+      line-height: 80px;
+      a {
+        text-decoration: none;
+        display: inline-block;
+        line-height: 1.5;
+        padding: 0 22px;
+        font-size: 15px;
+        &:hover, &.router-link-active {
+          color: #1989fa;
+        }
+      }
+    }
+  }
+}
+
+// footer
+.app-footer {
+  min-height: calc(100%);
+  margin-top: 90px;
+  width: 100%;
+  background-color: #fff;
+  .page-container {
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    .bin-scrollbar__wrap {
+      overflow-x: hidden;
+    }
+  }
+  .footer {
+    padding: 2rem;
+    text-align: center;
+    color: #4e6e8e;
+  }
+}
