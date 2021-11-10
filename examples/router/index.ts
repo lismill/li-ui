@@ -43,7 +43,7 @@ const router = new VueRouter({
 
 router.beforeEach((to: any, from: any, next: any) => {
   // 修改项目标题
-  document.title = `Liui${to.meta.title ? " | " + to.meta.title : ""}`;
+  document.title = `Li-UI${to.meta.title ? " | " + to.meta.title : ""}`;
   next();
 });
 

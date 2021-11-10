@@ -1,3 +1,6 @@
+## Li-UI
+Generate a UI library based on vue2.x
+
 ## Project setup
 
 ```
