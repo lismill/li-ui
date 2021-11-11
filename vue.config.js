@@ -10,6 +10,7 @@ const resolve = (dir) => path.join(__dirname, dir);
 module.exports = {
   // 部署应用包时的基本 URL
   publicPath: "./",
+  outputDir: "docs",
   // 静态资源目录
   assetsDir: "assets",
   // 配置 scss 预置数据
