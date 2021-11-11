@@ -56,7 +56,6 @@ module.exports = {
       });
   },
   pages: {
-    // 首页配置CDN
     index: {
       entry: "examples/main.ts",
       template: "public/index.html",
