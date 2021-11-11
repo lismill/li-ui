@@ -1,0 +1,16 @@
+# 忽略目录
+.vscode/
+examples/
+packages/
+public/
+
+# 忽略文件
+.browserslistrc
+.editorconfig
+.env.develop
+.eslintrc.js
+.gitignore
+.prettierrc.js
+babel.config.js
+tsconfig.json
+vue.config.js

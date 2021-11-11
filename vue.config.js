@@ -1,7 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-// 引入 CDN 资源
-const { CDN } = require("./examples/utils/cdn");
-
 // 引入path模块
 const path = require("path");
 // 设置绝对路径
@@ -55,14 +52,6 @@ module.exports = {
         raw: true,
       });
   },
-  configureWebpack: {
-    // 忽略打包第三方库
-    externals: {
-      vue: "Vue",
-      "vue-router": "VueRouter",
-      "vue-i18n": "VueI18n",
-    },
-  },
   pages: {
     // 首页配置CDN
     index: {
@@ -70,7 +59,6 @@ module.exports = {
       template: "public/index.html",
       filename: "index.html",
       chunks: ["chunk-vendors", "chunk-common", "index"],
-      cdn: CDN[process.env.VUE_APP_ENV],
     },
   },
 };

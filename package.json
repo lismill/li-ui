@@ -1,7 +1,7 @@
 {
-  "name": "li-ui",
-  "version": "0.1.0",
-  "main": "li-ui.common.js",
+  "name": "li-ui-library",
+  "version": "0.1.5",
+  "main": "./lib/li-ui.umd.js",
   "author": "Lean",
   "license": "MIT",
   "private": false,
