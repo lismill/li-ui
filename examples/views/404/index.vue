@@ -1,5 +1,5 @@
 <template>
-  <div class="404">404</div>
+  <div class="markdown-body 404">404</div>
 </template>
 
 <script lang="ts">
