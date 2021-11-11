@@ -16,7 +16,7 @@
         <svg-icon v-if="random === 11" name="logo-游戏机手柄" size="66"></svg-icon>
         <svg-icon v-if="random === 12" name="logo-面条" size="58" style="margin: 0 5px 0 -5px"></svg-icon>
         <svg-icon v-if="random === 13" name="logo-小女孩" size="45" style="margin: 0 10px 0 0"></svg-icon>
-        <span>Generate a UI library</span>
+        <span>Generate a library for vue.js2</span>
       </div>
       <div class="link">
         <div class="web">

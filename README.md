@@ -1,5 +1,5 @@
 ## Li-UI
-Generate a UI library based on vue2.x
+Generate a library for vue.js2，因为使用了 `highlight.js` 所以建议 `node >= 14.0.0`
 
 ## Project setup
 

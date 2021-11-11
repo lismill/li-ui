@@ -1,2 +1,2 @@
 ## 指南
-Generate a UI library
+Generate a library for vue.js2
