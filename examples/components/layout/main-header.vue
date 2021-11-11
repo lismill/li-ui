@@ -1,7 +1,7 @@
 <template>
   <header class="app-header">
     <div class="header-container">
-      <div class="logo">
+      <div class="logo cursor-pointer" @click="() => this.$router.push('/')">
         <template v-for="(logo, index) in logos">
           <svg-icon
             :key="logo.name"
