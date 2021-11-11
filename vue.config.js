@@ -1,4 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+// gzip
+const CompressionPlugin = require("compression-webpack-plugin");
+
 // 引入path模块
 const path = require("path");
 // 设置绝对路径
@@ -60,5 +63,20 @@ module.exports = {
       filename: "index.html",
       chunks: ["chunk-vendors", "chunk-common", "index"],
     },
+  },
+  configureWebpack() {
+    return {
+      plugins: [
+        new CompressionPlugin({
+          /** gzip压缩**/
+          filename: "[path].gz[query]",
+          algorithm: "gzip",
+          test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
+          threshold: 10240,
+          deleteOriginalAssets: false,
+          minRatio: 0.8,
+        }),
+      ],
+    };
   },
 };

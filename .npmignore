@@ -14,3 +14,5 @@ public/
 babel.config.js
 tsconfig.json
 vue.config.js
+yarn.lock
+*.map

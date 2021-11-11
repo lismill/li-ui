@@ -1,8 +1,8 @@
 {
-  "name": "li-ui-library",
-  "version": "0.1.5",
+  "name": "li-ui-component",
+  "version": "0.1.2",
   "main": "./lib/li-ui.umd.js",
-  "author": "Lean",
+  "author": "leelean",
   "license": "MIT",
   "private": false,
   "scripts": {
@@ -11,8 +11,12 @@
     "lib": "vue-cli-service build --target lib --name li-ui --dest lib packages/index.ts",
     "lint": "vue-cli-service lint"
   },
-  "keywords": ["UI", "li-ui"],
+  "keywords": [
+    "UI",
+    "li-ui"
+  ],
   "dependencies": {
+    "compression-webpack-plugin": "^5.0.0",
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
     "svg-sprite-loader": "^6.0.11",
